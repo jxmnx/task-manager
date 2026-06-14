@@ -1,0 +1,200 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #312e81
+    );
+
+    padding:20px;
+}
+
+.container{
+
+    width:100%;
+    max-width:700px;
+
+    padding:30px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+    0 8px 32px rgba(0,0,0,0.4);
+}
+
+h1,h2{
+
+    color:white;
+
+    text-align:center;
+
+    margin-bottom:25px;
+}
+
+input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,0.12);
+
+    color:white;
+
+    font-size:15px;
+
+    outline:none;
+}
+
+input::placeholder{
+    color:#d1d5db;
+}
+
+button{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #6366f1,
+        #8b5cf6
+    );
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 5px 20px rgba(99,102,241,0.5);
+}
+
+a{
+
+    color:#a5b4fc;
+
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+p{
+    color:white;
+    margin-top:15px;
+    text-align:center;
+}
+
+#taskList{
+    margin-top:25px;
+}
+
+.task{
+
+    background:rgba(255,255,255,0.12);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    border-radius:15px;
+
+    padding:20px;
+
+    margin-bottom:15px;
+
+    animation:fadeIn 0.4s ease;
+}
+
+.task h3{
+
+    color:white;
+
+    margin-bottom:10px;
+}
+
+.task p{
+
+    color:#e5e7eb;
+
+    text-align:left;
+
+    margin:8px 0;
+}
+
+.task button{
+
+    margin-top:10px;
+}
+
+.logout-btn{
+
+    margin-bottom:20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ef4444,
+        #dc2626
+    );
+}
+
+.logout-btn:hover{
+
+    box-shadow:
+    0 5px 20px rgba(239,68,68,0.5);
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
