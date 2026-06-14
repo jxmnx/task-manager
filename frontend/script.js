@@ -1,5 +1,7 @@
 console.log("script loaded");
 
+const API_URL = "https://task-manager-4enr.onrender.com";
+
 // REGISTER
 async function register() {
     try {
@@ -8,7 +10,7 @@ async function register() {
         const password = document.getElementById("password").value;
 
         const response = await fetch(
-            "http://localhost:3000/api/auth/register",
+            `${API_URL}/api/auth/register`,
             {
                 method: "POST",
                 headers: {
@@ -43,7 +45,7 @@ async function login() {
         const password = document.getElementById("password").value;
 
         const response = await fetch(
-            "http://localhost:3000/api/auth/login",
+            `${API_URL}/api/auth/login`,
             {
                 method: "POST",
                 headers: {
@@ -81,7 +83,7 @@ async function loadTasks() {
     }
 
     const response = await fetch(
-        "http://localhost:3000/api/tasks",
+        `${API_URL}/api/tasks`,
         {
             headers: {
                 Authorization: token
@@ -128,7 +130,7 @@ async function addTask() {
         localStorage.getItem("token");
 
     await fetch(
-        "http://localhost:3000/api/tasks",
+        `${API_URL}/api/tasks`,
         {
             method: "POST",
             headers: {
@@ -142,6 +144,9 @@ async function addTask() {
         }
     );
 
+    document.getElementById("taskTitle").value = "";
+    document.getElementById("taskDescription").value = "";
+
     loadTasks();
 }
 
@@ -152,7 +157,7 @@ async function deleteTask(id) {
         localStorage.getItem("token");
 
     await fetch(
-        `http://localhost:3000/api/tasks/${id}`,
+        `${API_URL}/api/tasks/${id}`,
         {
             method: "DELETE",
             headers: {
@@ -164,13 +169,13 @@ async function deleteTask(id) {
     loadTasks();
 }
 
+// LOGOUT
+function logout() {
+    localStorage.removeItem("token");
+    window.location.href = "login.html";
+}
+
 // AUTO LOAD TASKS
 if (window.location.pathname.includes("index.html")) {
     loadTasks();
-}
-function logout(){
-
-    localStorage.removeItem("token");
-
-    window.location.href = "login.html";
 }
