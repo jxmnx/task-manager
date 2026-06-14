@@ -84,7 +84,8 @@ router.post("/login", async (req, res) => {
             process.env.JWT_SECRET
         );
 
-        res.json({ token });
+       console.log("TOKEN GENERATED:", token);
+res.json({ token });
 
     } catch (error) {
 
